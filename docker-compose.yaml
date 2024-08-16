@@ -1,0 +1,61 @@
+# version: '3.8'
+
+# services:
+#   app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8082:8082"
+#     env_file:
+#       - .env
+#     # depends_on:
+#     #   - mongo
+
+# #   mongo:
+# #     image: mongo:6.0
+# #     restart: always
+# #     environment:
+# #       MONGO_INITDB_ROOT_USERNAME: root
+# #       MONGO_INITDB_ROOT_PASSWORD: example
+# #     ports:
+# #       - "27017:27017"
+# #     volumes:
+# #       - mongo-data:/data/db
+
+# # volumes:
+# #   mongo-data:
+
+
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - /home/ubuntu/fifthproj/database/docker/Resources/data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - app-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    env_file:
+      - .env
+    networks:
+      - app-network
+    depends_on:
+      - mongodb
+
+networks:
+  app-network:
+    driver: bridge

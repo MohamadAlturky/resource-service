@@ -1,0 +1,26 @@
+### Test POST /set Endpoint
+POST http://localhost:8082/set
+Content-Type: application/json
+
+{
+  "activityId": 3,
+  "name": "Sample Activity",
+  "description": "This is a sample activity."
+}
+
+### Test GET /get/1 Endpoint
+GET http://localhost:8082/get/3
+
+
+### Test POST /set Endpoint
+POST http://172.29.3.110:8082/set
+Content-Type: application/json
+
+{
+  "activityId": 5,
+  "name": "Sample Activity",
+  "description": "This is a sample activity."
+}
+
+### Test GET /get/1 Endpoint
+GET http://172.29.3.110:8082/get/3
