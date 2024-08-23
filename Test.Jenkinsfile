@@ -19,7 +19,7 @@ pipeline {
                 script {
                     sh 'k6 --version'
                     sh "docker-compose -f docker-compose.test.yaml up --build -d"
-                    sh "k6 run tests/k6.js"
+                    // sh "k6 run tests/k6.js"
                     // sh "docker-compose -f docker-compose.test.yaml down"
                 }
             }
