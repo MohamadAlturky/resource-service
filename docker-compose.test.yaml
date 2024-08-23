@@ -30,9 +30,9 @@
 version: '3.8'
 
 services:
-  mongodb:
+  mongodb_test:
     image: mongo:latest
-    container_name: mongodb
+    container_name: mongodb_test
     ports:
       - "27018:27017"
     volumes:
@@ -56,7 +56,7 @@ services:
     networks:
       - app-network
     depends_on:
-      - mongodb
+      - mongodb_test
 
 networks:
   app-network:
