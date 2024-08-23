@@ -34,9 +34,9 @@ services:
     image: mongo:latest
     container_name: mongodb
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
-      - /home/ubuntu/fifthproj/database/docker/Resources/dataMain:/data/db
+      - /home/ubuntu/fifthproj/database/docker/Resources/data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -48,9 +48,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8082:8082"
+      - "8083:8082"
     env_file:
       - .env
+    environment:
+      MONGO_URI: mongodb://root:example@mongodb:27018
     networks:
       - app-network
     depends_on:

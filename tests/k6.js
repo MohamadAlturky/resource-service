@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { SharedArray } from 'k6/data';
 
-const BASE_URL = 'http://localhost:8082/get/';
+const BASE_URL = 'http://localhost:8083/get/';
 
 const NUMBERS = new SharedArray('random numbers', function () {
   return Array.from({ length: 1000 }, () => Math.floor(Math.random() * 100) + 1);
