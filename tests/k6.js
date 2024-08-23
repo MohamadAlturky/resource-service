@@ -10,9 +10,9 @@ const NUMBERS = new SharedArray('random numbers', function () {
 
 export const options = {
   stages: [
-    { duration: '10s', target: 2000 },
-    { duration: '30s', target: 20000 },
-    { duration: '30s', target: 20000 },
+    { duration: '5s', target: 100 },
+    { duration: '2s', target: 30000 },
+    { duration: '30s', target: 30000 },
     { duration: '10s', target: 0 }
   ],
 };
