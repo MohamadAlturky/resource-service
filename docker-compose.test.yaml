@@ -1,32 +1,3 @@
-# version: '3.8'
-
-# services:
-#   app:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile
-#     ports:
-#       - "8082:8082"
-#     env_file:
-#       - .env
-#     # depends_on:
-#     #   - mongo
-
-# #   mongo:
-# #     image: mongo:6.0
-# #     restart: always
-# #     environment:
-# #       MONGO_INITDB_ROOT_USERNAME: root
-# #       MONGO_INITDB_ROOT_PASSWORD: example
-# #     ports:
-# #       - "27017:27017"
-# #     volumes:
-# #       - mongo-data:/data/db
-
-# # volumes:
-# #   mongo-data:
-
-
 version: '3.8'
 
 services:
@@ -34,9 +5,9 @@ services:
     image: mongo:latest
     container_name: mongodb_test
     ports:
-      - "27018:27017"
+      - "27017:27017"
     volumes:
-      - /home/ubuntu/fifthproj/database/docker/Resources/data:/data/db
+      - /home/ubuntu/fifthproj/database/docker/Resources/data_test:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -51,8 +22,8 @@ services:
       - "8083:8082"
     env_file:
       - .env
-    environment:
-      MONGO_URI: mongodb://root:example@mongodb:27018
+    # environment:`
+      # MONGO_URI: mongodb://root:example@mongodb:27018
     networks:
       - app-network
     depends_on:

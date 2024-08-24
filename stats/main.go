@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	mongoURI := "mongodb://root:example@172.29.3.110:27017"
+	mongoURI := "mongodb://root:example@localhost:27017"
 	dbName := "resources"
 	collectionName := "activities"
 

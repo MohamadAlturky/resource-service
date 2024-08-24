@@ -31,7 +31,6 @@ func main() {
 
     indexModel := mongo.IndexModel{
         Keys:    bson.D{{Key: "activityId", Value: 1}},
-        // Options: options.Index().SetUnique(true),
     }
 
     indexName, err := collection.Indexes().CreateOne(context.TODO(), indexModel)
