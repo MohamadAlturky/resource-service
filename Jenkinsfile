@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         REPO_URL = 'https://github.com/MohamadAlturky/resource-service.git'
-        BRANCH = 'test'
+        BRANCH = 'main'
         CREDENTIALS_ID = 'github'
     }
 
