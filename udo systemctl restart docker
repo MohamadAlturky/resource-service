@@ -1,0 +1,23 @@
+[0;1;32m●[0m docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Fri 2024-08-23 20:14:04 +03; 5min ago
+TriggeredBy: [0;1;32m●[0m docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 65166 (dockerd)
+      Tasks: 58
+     Memory: 55.3M
+     CGroup: /system.slice/docker.service
+             ├─65166 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+             ├─69569 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8061 -container-ip 172.29.0.2 -container-port 8081
+             └─69576 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 8061 -container-ip 172.29.0.2 -container-port 8081
+
+Aug 23 20:13:57 restaurant dockerd[65166]: time="2024-08-23T20:13:57.947578129+03:00" level=info msg="Docker daemon" commit=f9522e5 containerd-snapshotter=false storage-driver=overlay2 version=27.1.2
+Aug 23 20:13:57 restaurant dockerd[65166]: time="2024-08-23T20:13:57.947778547+03:00" level=info msg="Daemon has completed initialization"
+Aug 23 20:14:04 restaurant dockerd[65166]: time="2024-08-23T20:14:04.367445166+03:00" level=info msg="API listen on /run/docker.sock"
+Aug 23 20:14:04 restaurant systemd[1]: Started Docker Application Container Engine.
+Aug 23 20:15:31 restaurant dockerd[65166]: time="2024-08-23T20:15:31.007819034+03:00" level=info msg="ignoring event" container=65cf34f0d980d4ed0d6781c1716cf6fc454ffb35719491702a8dfe3d0bff366d module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Aug 23 20:15:31 restaurant dockerd[65166]: time="2024-08-23T20:15:31.420883740+03:00" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+Aug 23 20:17:04 restaurant dockerd[65166]: time="2024-08-23T20:17:04.988185059+03:00" level=info msg="ignoring event" container=65cf34f0d980d4ed0d6781c1716cf6fc454ffb35719491702a8dfe3d0bff366d module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Aug 23 20:17:05 restaurant dockerd[65166]: time="2024-08-23T20:17:05.696204002+03:00" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+Aug 23 20:18:39 restaurant dockerd[65166]: time="2024-08-23T20:18:39.456167976+03:00" level=info msg="ignoring event" container=65cf34f0d980d4ed0d6781c1716cf6fc454ffb35719491702a8dfe3d0bff366d module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Aug 23 20:18:40 restaurant dockerd[65166]: time="2024-08-23T20:18:40.079433535+03:00" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
