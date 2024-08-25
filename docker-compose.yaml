@@ -7,14 +7,15 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - /home/ubuntu/fifthproj/database/docker/Resources/MainData:/data/db
+      - /home/ubuntu/fifthproj/database/docker/Resources/MainDataVolume:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     networks:
-      - gateway_network
+      - new_gateway_network
 
   app:
+    container_name: storage_service 
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,11 +23,12 @@ services:
       - "8082:8082"
     env_file:
       - .env
-    networks:
-      - gateway_network
     depends_on:
       - mongodb
-
+    networks:
+      - new_gateway_network
 
 networks:
-  gateway_network:
+  new_gateway_network:
+      external: true
+      name: identityproviderapi_new_gateway_network
